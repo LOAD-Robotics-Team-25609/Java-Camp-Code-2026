@@ -52,7 +52,7 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative OpMode")
+@TeleOp(name="Juliet Basic: Iterative OpMode", group="Iterative OpMode")
 public class Juliet_Code extends OpMode
 {
     private Follower follower;
@@ -91,9 +91,9 @@ public class Juliet_Code extends OpMode
     public void loop() {
         follower.update();
         follower.setTeleOpDrive(
-                gamepad1.left_stick_y,
-                gamepad1.left_stick_x,
-                gamepad1.right_stick_x,
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x,
                 true
         );
         if (gamepad1.right_trigger > 0.1) {
