@@ -58,7 +58,7 @@ public class Dylan_Code extends OpMode
 {
 
     private Follower follower;
-    private Devices.DcMotorExClass intake;
+    private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -106,6 +106,8 @@ public class Dylan_Code extends OpMode
             if(gamepad1.left_trigger>0.1){
                 intake.setDirection(DcMotorSimple.Direction.REVERSE);
                 intake.setPower(gamepad1.left_trigger);
+            }else{
+                intake.setPower(0);
             }
         }
     }
