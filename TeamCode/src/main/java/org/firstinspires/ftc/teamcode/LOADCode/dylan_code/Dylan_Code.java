@@ -29,8 +29,12 @@
 
 package org.firstinspires.ftc.teamcode.LOADCode.dylan_code;
 
+import com.pedropathing.follower.Follower;
+import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 /*
  * This file contains an example of an iterative (Non-Linear) "OpMode".
@@ -50,11 +54,16 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class Dylan_Code extends OpMode
 {
 
+    private Follower follower;
+
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
+        follower= Constants.createFollower(hardwareMap);
+        follower.setStartingPose(new Pose(72,72, Math.toRadians(90)));
+        follower.update();
     }
 
     /*
@@ -69,6 +78,7 @@ public class Dylan_Code extends OpMode
      */
     @Override
     public void start() {
+        follower.startTeleOpDrive(true);
     }
 
     /*
@@ -76,6 +86,13 @@ public class Dylan_Code extends OpMode
      */
     @Override
     public void loop() {
+        follower.update();
+        follower.setTeleOpDrive(
+                gamepad1.left_stick_y,
+                gamepad1.left_stick_x,
+                gamepad1.right_stick_x,
+                true
+        );
     }
 
     /*
