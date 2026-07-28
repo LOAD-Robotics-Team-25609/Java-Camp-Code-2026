@@ -9,9 +9,10 @@ public class Dylan_current_testing_pro_board {
     private double ticksPerRotation;
 
 public void init (HardwareMap hwMap) {
-    motor = hwMap.get(DcMotorEx.class, "motor");
-motor=hwMap.get(DcMotorEx.class,"motor");
-motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    motor = hwMap.get(DcMotorEx.class, "intake");
+motor=hwMap.get(DcMotorEx.class,"intake");
+// "intake" is just pod motor //
+motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 ticksPerRotation=motor.getMotorType().getTicksPerRev();
 
 }

@@ -36,6 +36,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -104,12 +105,16 @@ public class Dylan_Code extends OpMode
         }else{
             intake.setPower(0);
             if(gamepad1.left_trigger>0.1){
-                intake.setDirection(DcMotorSimple.Direction.REVERSE);
-                intake.setPower(-gamepad1.left_trigger);
+                intake.setPower(gamepad1.left_trigger);
             }else{
                 intake.setPower(0);
             }
         }
+    }
+
+    @Override
+    public void updateTelemetry(Telemetry telemetry) {
+        super.updateTelemetry(telemetry);
     }
 
     /*
