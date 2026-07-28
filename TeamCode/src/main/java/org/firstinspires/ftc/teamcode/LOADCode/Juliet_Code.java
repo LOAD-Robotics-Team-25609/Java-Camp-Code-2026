@@ -97,7 +97,7 @@ public class Juliet_Code extends OpMode
                 true
         );
         if (gamepad1.right_trigger > 0.1) {
-            intake.setPower(gamepad1.right_trigger);
+            intake.setPower(-gamepad1.right_trigger);
         }else {
             intake.setPower(0);
         }
