@@ -51,7 +51,7 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative OpMode")
+@TeleOp(name="MrMorton Basic: Iterative OpMode", group="Iterative OpMode")
 public class Mr_Morton_Code extends OpMode
 {
 
@@ -92,9 +92,9 @@ public class Mr_Morton_Code extends OpMode
     {
         follower.update();
         follower.setTeleOpDrive(
-                gamepad1.left_stick_y,
-                gamepad1.left_stick_x,
-                gamepad1.right_stick_x,
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x,
                 true
         );
         if (gamepad1.right_trigger > 0.1)
