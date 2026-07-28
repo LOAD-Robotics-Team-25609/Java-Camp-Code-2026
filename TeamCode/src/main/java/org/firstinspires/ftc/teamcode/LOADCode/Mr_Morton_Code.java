@@ -56,7 +56,7 @@ public class Mr_Morton_Code extends OpMode
 {
 
     private Follower follower;
-    private Devices.DcMotorExClass intake;
+    private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
 
     /*
      * Code to run ONCE when the driver hits INIT

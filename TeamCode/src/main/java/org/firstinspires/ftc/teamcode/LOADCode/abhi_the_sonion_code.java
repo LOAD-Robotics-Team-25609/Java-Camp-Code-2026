@@ -56,7 +56,7 @@ public class abhi_the_sonion_code extends OpMode
 {
 
     private Follower follower;
-    private Devices.DcMotorExClass intake;
+    private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
     /*
      * Code to run ONCE when the driver hits INIT
      */
