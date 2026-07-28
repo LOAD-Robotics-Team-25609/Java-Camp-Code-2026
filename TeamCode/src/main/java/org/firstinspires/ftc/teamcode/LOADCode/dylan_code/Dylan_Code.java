@@ -35,8 +35,8 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -56,11 +56,11 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 @TeleOp(name="Dylan Basic: Iterative OpMode", group="Iterative OpMode")
 public class Dylan_Code extends OpMode
+
 {
 
     private Follower follower;
     private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
-
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -85,6 +85,7 @@ public class Dylan_Code extends OpMode
     @Override
     public void start() {
         follower.startTeleOpDrive(true);
+
     }
 
     /*
@@ -92,6 +93,7 @@ public class Dylan_Code extends OpMode
      */
     @Override
     public void loop() {
+
         follower.update();
         follower.setTeleOpDrive(
                 -gamepad1.left_stick_y,
@@ -110,11 +112,6 @@ public class Dylan_Code extends OpMode
                 intake.setPower(0);
             }
         }
-    }
-
-    @Override
-    public void updateTelemetry(Telemetry telemetry) {
-        super.updateTelemetry(telemetry);
     }
 
     /*
