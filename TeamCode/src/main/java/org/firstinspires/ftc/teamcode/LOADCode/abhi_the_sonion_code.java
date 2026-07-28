@@ -51,7 +51,7 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative OpMode")
+@TeleOp(name="Abhi Basic: Iterative OpMode", group="Iterative OpMode")
 public class abhi_the_sonion_code extends OpMode
 {
 
@@ -91,9 +91,9 @@ public class abhi_the_sonion_code extends OpMode
     public void loop() {
         follower.update();
         follower.setTeleOpDrive(
-                gamepad1.left_stick_y,
-                gamepad1.left_stick_x,
-                gamepad1.right_stick_x,
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x,
                 true
 
         );
