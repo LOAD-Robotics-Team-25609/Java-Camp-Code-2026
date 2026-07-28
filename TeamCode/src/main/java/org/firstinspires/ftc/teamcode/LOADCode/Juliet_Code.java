@@ -33,6 +33,7 @@ import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -51,9 +52,8 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  */
 
 @TeleOp(name="Basic: Iterative OpMode", group="Iterative OpMode")
-public class Mr_Morton_Code extends OpMode
+public class Juliet_Code extends OpMode
 {
-
     private Follower follower;
 
     /*
@@ -62,7 +62,7 @@ public class Mr_Morton_Code extends OpMode
     @Override
     public void init() {
         follower = Constants.createFollower(hardwareMap);
-        follower.setStartingPose(new Pose(72, 72, Math.toRadians(90)));
+        follower.setStartingPose(new Pose(72,72, Math.toRadians(90)));
         follower.update();
     }
 
@@ -78,7 +78,7 @@ public class Mr_Morton_Code extends OpMode
      */
     @Override
     public void start() {
-        follower.startTeleOpDrive(true);
+        follower.startTeleOpDrive( true);
     }
 
     /*
