@@ -36,6 +36,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -109,6 +110,11 @@ public class Dylan_Code extends OpMode
                 intake.setPower(0);
             }
         }
+    }
+
+    @Override
+    public void updateTelemetry(Telemetry telemetry) {
+        super.updateTelemetry(telemetry);
     }
 
     /*
