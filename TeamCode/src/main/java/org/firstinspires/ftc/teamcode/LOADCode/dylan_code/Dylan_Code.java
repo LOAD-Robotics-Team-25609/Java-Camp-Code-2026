@@ -33,7 +33,10 @@ import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
+import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 /*
@@ -55,12 +58,14 @@ public class Dylan_Code extends OpMode
 {
 
     private Follower follower;
+    private Devices.DcMotorExClass intake;
 
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
+        intake.init(this, "intake");
         follower= Constants.createFollower(hardwareMap);
         follower.setStartingPose(new Pose(72,72, Math.toRadians(90)));
         follower.update();
@@ -92,7 +97,17 @@ public class Dylan_Code extends OpMode
                 gamepad1.left_stick_x,
                 gamepad1.right_stick_x,
                 true
+
         );
+        if (gamepad1.right_trigger>0.1){
+            intake.setPower(gamepad1.right_trigger);
+        }else{
+            intake.setPower(0);
+            if(gamepad1.left_trigger>0.1){
+                intake.setDirection(DcMotorSimple.Direction.REVERSE);
+                intake.setPower(gamepad1.left_trigger);
+            }
+        }
     }
 
     /*
