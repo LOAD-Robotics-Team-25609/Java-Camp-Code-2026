@@ -98,7 +98,12 @@ public class abhi_the_sonion_code extends OpMode
 
         );
         if (gamepad1.right_trigger>0.1) {
-            intake.setPower((-gamepad1.right_trigger));
+            intake.setPower(-gamepad1.right_trigger);
+        }else{
+            intake.setPower(0);
+        }
+        if (gamepad1.left_trigger>0.1) {
+            intake.setPower(gamepad1.left_trigger);
         }else{
             intake.setPower(0);
         }
