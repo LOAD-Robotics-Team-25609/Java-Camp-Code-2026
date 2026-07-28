@@ -35,6 +35,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 /*
@@ -51,16 +52,18 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative OpMode")
+@TeleOp(name="Juliet Basic: Iterative OpMode", group="Iterative OpMode")
 public class Juliet_Code extends OpMode
 {
     private Follower follower;
+    private Devices.DcMotorExClass intake;
 
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
+        intake.init(this, "intake");
         follower = Constants.createFollower(hardwareMap);
         follower.setStartingPose(new Pose(72,72, Math.toRadians(90)));
         follower.update();
@@ -88,11 +91,16 @@ public class Juliet_Code extends OpMode
     public void loop() {
         follower.update();
         follower.setTeleOpDrive(
-                gamepad1.left_stick_y,
-                gamepad1.left_stick_x,
-                gamepad1.right_stick_x,
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x,
                 true
         );
+        if (gamepad1.right_trigger > 0.1) {
+            intake.setPower(gamepad1.right_trigger);
+        }else {
+            intake.setPower(0);
+        }
     }
 
     /*
