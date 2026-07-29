@@ -36,11 +36,11 @@ public class juliet_auto extends NextFTCOpMode {
                 })
         );
     }
-    paths_julietCode paths;
+    Paths paths;
 
     @Override public void onInit() {
         follower().setStartingPose(new Pose( 88, 7.1, Math.toRadians(90)));
-        paths = new paths_julietCode(follower());
+        paths = new Paths(follower());
         intake.init(this, "intake");
         intake.setDirection(DcMotorSimple.Direction.REVERSE);
     }
