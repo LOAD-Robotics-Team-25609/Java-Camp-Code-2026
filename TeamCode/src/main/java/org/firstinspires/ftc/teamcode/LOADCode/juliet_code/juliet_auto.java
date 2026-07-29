@@ -2,7 +2,10 @@ package org.firstinspires.ftc.teamcode.LOADCode.juliet_code;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
+import dev.nextftc.core.commands.Command;
 import dev.nextftc.core.commands.groups.SequentialGroup;
+import dev.nextftc.core.commands.utility.InstantCommand;
+import dev.nextftc.core.commands.utility.LambdaCommand;
 import dev.nextftc.extensions.pedro.FollowPath;
 import dev.nextftc.extensions.pedro.PedroComponent;
 import dev.nextftc.ftc.NextFTCOpMode;
@@ -18,6 +21,9 @@ public class juliet_auto extends NextFTCOpMode {
         addComponents(new PedroComponent(Constants:: createFollower));
     }
 
+    Command setIntakeMode(boolean on){
+        return new InstantCommand(new LambdaCommand("setIntake"));
+    }
     paths_julietCode paths;
 
     @Override public void onInit() {
