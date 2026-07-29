@@ -5,10 +5,10 @@ import com.pedropathing.geometry.BezierCurve;
 import com.pedropathing.geometry.Pose;
 import com.pedropathing.paths.PathChain;
 
-public  class Paths {
+public  class guardedfoil {
     public PathChain MainChain;
 
-    public Paths(Follower follower) {
+    public guardedfoil(Follower follower) {
         MainChain = follower.pathBuilder()
                 .addPath(
                         new BezierCurve(
