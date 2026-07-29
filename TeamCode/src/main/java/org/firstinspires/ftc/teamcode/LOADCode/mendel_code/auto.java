@@ -16,8 +16,11 @@ public class auto extends NextFTCOpMode {
         );
     }
 
+    guardedfoil guardedfoil;
+
     @Override public void onInit() {
         follower().setStartingPose(new Pose(88,7.1, Math.toRadians(90)));
+        guardedfoil = new guardedfoil(follower());
     }
     @Override public void onWaitForStart() { }
     @Override public void onStartButtonPressed() {
