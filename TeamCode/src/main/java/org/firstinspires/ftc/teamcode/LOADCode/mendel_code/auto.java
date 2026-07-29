@@ -5,6 +5,7 @@ import static dev.nextftc.extensions.pedro.PedroComponent.follower;
 
 import com.pedropathing.geometry.Pose;
 
+import dev.nextftc.core.commands.groups.SequentialGroup;
 import dev.nextftc.extensions.pedro.PedroComponent;
 import dev.nextftc.ftc.NextFTCOpMode;
 
@@ -16,10 +17,14 @@ public class auto extends NextFTCOpMode {
     }
 
     @Override public void onInit() {
-        follower().setStartingPose(new Pose(88,7.1 Math.toRadians(90)));
+        follower().setStartingPose(new Pose(88,7.1, Math.toRadians(90)));
     }
     @Override public void onWaitForStart() { }
-    @Override public void onStartButtonPressed() { }
+    @Override public void onStartButtonPressed() {
+        new SequentialGroup(
+
+        ).schedule();
+    }
     @Override public void onUpdate() { }
     @Override public void onStop() { }
 }
