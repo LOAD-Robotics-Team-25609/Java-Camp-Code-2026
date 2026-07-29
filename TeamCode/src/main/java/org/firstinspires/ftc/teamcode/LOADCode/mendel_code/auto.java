@@ -4,11 +4,13 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 import static dev.nextftc.extensions.pedro.PedroComponent.follower;
 
 import com.pedropathing.geometry.Pose;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import dev.nextftc.core.commands.groups.SequentialGroup;
 import dev.nextftc.extensions.pedro.PedroComponent;
 import dev.nextftc.ftc.NextFTCOpMode;
 
+@Autonomous(name = "mendel_auto_2")
 public class auto extends NextFTCOpMode {
     {
         addComponents(
