@@ -33,6 +33,7 @@ import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
@@ -56,7 +57,7 @@ public class Daniel_Code extends OpMode
 {
 
     private Follower follower;
-    private Devices.DcMotorExClass intake;
+    private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -97,7 +98,7 @@ public class Daniel_Code extends OpMode
                 true
         );
         if (gamepad1.right_trigger > 0.1) {
-            intake.setPower(gamepad1.right_trigger);
+            intake.setPower(-gamepad1.right_trigger);
         }else{
             intake.setPower(0);
         }

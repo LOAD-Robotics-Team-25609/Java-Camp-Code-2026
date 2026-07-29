@@ -11,8 +11,7 @@ public class Dylan_current_testing_pro_board {
 public void init (HardwareMap hwMap) {
     motor = hwMap.get(DcMotorEx.class, "intake");
 motor=hwMap.get(DcMotorEx.class,"intake");
-// "intake" is just pod motor //
-motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 ticksPerRotation=motor.getMotorType().getTicksPerRev();
 
 }
@@ -24,7 +23,8 @@ ticksPerRotation=motor.getMotorType().getTicksPerRev();
     return motor.getCurrentPosition()/ticksPerRotation;
 
     }
-    public String getCurrentAmps(CurrentUnit Milliamps) {
+    @SuppressWarnings("InfiniteRecursion")
+    public double getCurrentAmps(CurrentUnit Milliamps) {
         return getCurrentAmps(CurrentUnit.MILLIAMPS);
     }
 
