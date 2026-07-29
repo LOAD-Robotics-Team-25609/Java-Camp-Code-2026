@@ -27,7 +27,6 @@ public class Example_Auto extends NextFTCOpMode {
 
     @Override public void onInit() {
         follower().setStartingPose(new Pose(72, 72, Math.toRadians(90)));
-        follower().update();
         paths = new Paths(follower());
     }
     @Override public void onWaitForStart() {
@@ -39,7 +38,6 @@ public class Example_Auto extends NextFTCOpMode {
                 new Delay(2),
                 new FollowPath(paths.Path2)
         ).schedule();
-        follower().update();
     }
     @Override public void onUpdate() {
         follower().update();
