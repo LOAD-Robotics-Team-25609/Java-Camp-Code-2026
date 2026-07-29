@@ -15,7 +15,7 @@ public  class Paths {
                         new BezierCurve(
                                 new Pose(88.000, 7.100),
                                 new Pose(90.000, 90.000),
-                                new Pose(123.348, 83.107)
+                                new Pose(123.348, 80.107)
                         )
                 )
                 .setLinearHeadingInterpolation(Math.toRadians(90), Math.toRadians(0))
