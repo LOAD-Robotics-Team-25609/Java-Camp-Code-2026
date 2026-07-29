@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.LOADCode;
+package org.firstinspires.ftc.teamcode.LOADCode.daniel_code;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -8,7 +8,6 @@ import dev.nextftc.extensions.pedro.FollowPath;
 import dev.nextftc.extensions.pedro.PedroComponent;
 import static dev.nextftc.extensions.pedro.PedroComponent.follower;
 
-import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 

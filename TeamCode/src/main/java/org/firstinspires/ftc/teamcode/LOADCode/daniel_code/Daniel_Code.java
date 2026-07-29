@@ -27,7 +27,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.teamcode.LOADCode;
+package org.firstinspires.ftc.teamcode.LOADCode.daniel_code;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
@@ -51,8 +51,8 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="MrMorton Basic: Iterative OpMode", group="Iterative OpMode")
-public class Mr_Morton_Code extends OpMode
+@TeleOp(name="Daniel Basic: Iterative OpMode", group="Iterative OpMode")
+public class Daniel_Code extends OpMode
 {
 
     private Follower follower;
@@ -88,8 +88,7 @@ public class Mr_Morton_Code extends OpMode
      * Code to run REPEATEDLY after the driver hits START but before they hit STOP
      */
     @Override
-    public void loop()
-    {
+    public void loop() {
         follower.update();
         follower.setTeleOpDrive(
                 -gamepad1.left_stick_y,
@@ -97,15 +96,11 @@ public class Mr_Morton_Code extends OpMode
                 -gamepad1.right_stick_x,
                 true
         );
-        if (gamepad1.right_trigger > 0.1)
-        {
+        if (gamepad1.right_trigger > 0.1) {
             intake.setPower(-gamepad1.right_trigger);
-        }
-        else
-        {
+        }else{
             intake.setPower(0);
         }
-
     }
 
     /*

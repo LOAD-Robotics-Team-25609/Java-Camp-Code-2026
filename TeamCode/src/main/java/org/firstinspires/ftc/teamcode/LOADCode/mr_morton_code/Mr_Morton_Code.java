@@ -27,7 +27,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.teamcode.LOADCode;
+package org.firstinspires.ftc.teamcode.LOADCode.mr_morton_code;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
@@ -51,12 +51,12 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Mendel Basic: Iterative OpMode", group="Iterative OpMode")
-public class Mendel_Code extends OpMode {
+@TeleOp(name="MrMorton Basic: Iterative OpMode", group="Iterative OpMode")
+public class Mr_Morton_Code extends OpMode
+{
 
     private Follower follower;
     private Devices.DcMotorExClass intake = new Devices.DcMotorExClass();
-
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -88,7 +88,8 @@ public class Mendel_Code extends OpMode {
      * Code to run REPEATEDLY after the driver hits START but before they hit STOP
      */
     @Override
-    public void loop() {
+    public void loop()
+    {
         follower.update();
         follower.setTeleOpDrive(
                 -gamepad1.left_stick_y,
@@ -96,17 +97,22 @@ public class Mendel_Code extends OpMode {
                 -gamepad1.right_stick_x,
                 true
         );
-        if  (gamepad1.right_trigger > 0.1) {
+        if (gamepad1.right_trigger > 0.1)
+        {
             intake.setPower(-gamepad1.right_trigger);
-        }else{
+        }
+        else
+        {
             intake.setPower(0);
         }
+
     }
+
     /*
      * Code to run ONCE after the driver hits STOP
      */
     @Override
-    public void stop(){
+    public void stop() {
     }
 
 }

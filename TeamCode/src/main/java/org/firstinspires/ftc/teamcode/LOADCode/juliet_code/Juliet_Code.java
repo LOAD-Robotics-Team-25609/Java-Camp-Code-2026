@@ -27,13 +27,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.teamcode.LOADCode;
+package org.firstinspires.ftc.teamcode.LOADCode.juliet_code;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Devices;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
