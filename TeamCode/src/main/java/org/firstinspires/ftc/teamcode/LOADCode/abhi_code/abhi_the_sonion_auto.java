@@ -4,10 +4,14 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 import static dev.nextftc.extensions.pedro.PedroComponent.follower;
 
 import com.pedropathing.geometry.Pose;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
+import dev.nextftc.core.commands.groups.SequentialGroup;
+import dev.nextftc.extensions.pedro.FollowPath;
 import dev.nextftc.extensions.pedro.PedroComponent;
 import dev.nextftc.ftc.NextFTCOpMode;
 
+@Autonomous(name = "Abhi the sonion auto")
 public class abhi_the_sonion_auto extends NextFTCOpMode{
     {
         addComponents(
@@ -15,11 +19,18 @@ public class abhi_the_sonion_auto extends NextFTCOpMode{
         );
     }
 
+    sonion_paths paths;
+
     @Override public void onInit() {
         follower().setStartingPose(new Pose(88, 7.1, Math.toRadians(90)));
+        paths = new sonion_paths(follower());
     }
     @Override public void onWaitForStart() { }
-    @Override public void onStartButtonPressed() { }
+    @Override public void onStartButtonPressed() {
+        new SequentialGroup(
+                new FollowPath(paths.MainChain)
+        ).schedule();
+    }
     @Override public void onUpdate() { }
     @Override public void onStop() { }
 }
