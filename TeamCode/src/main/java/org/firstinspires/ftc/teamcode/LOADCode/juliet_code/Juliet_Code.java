@@ -96,26 +96,21 @@ public class Juliet_Code extends OpMode
                 -gamepad1.right_stick_x,
                 true
         );
-        if (gamepad1.right_trigger > 0.1) {
-            intake.setPower(-gamepad1.right_trigger);
-        }else{
-            intake.setPower(0);
-        }
-    }
+        //if (gamepad1.right_trigger > 0.1) {
+        //intake.setPower(-gamepad1.right_trigger);
+        // }else{
+        //intake.setPower(0);
+        // }
+        // }
 
-    /*
-     * Code to run ONCE after the driver hits STOP
-     */
-    @Override
-    public void stop() {
-    }
+        /*
+         * Code to run ONCE after the driver hits STOP
+         */
+        //@Override
+        //public void stop() {
+        //}
 
 }
 
 
-
-
-
-
-
-
+    }
