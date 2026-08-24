@@ -63,7 +63,7 @@ public class Juliet_Code extends OpMode
      */
     @Override
     public void init() {
-        intake.init(this, "intake");
+        //intake.init(this, "intake");
         follower = Constants.createFollower(hardwareMap);
         follower.setStartingPose(new Pose(72, 72, Math.toRadians(90)));
         follower.update();
